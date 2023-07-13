@@ -1,0 +1,43 @@
+.loginFormContainer {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    min-width: 200px;
+    margin-top: 300px;
+}
+
+.loginTitle {
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.loginInput {
+    margin: 10px 0px;
+    color: black;
+    background-color: var(--white2);
+}
+
+.loginInput:-webkit-autofill,
+.loginInput:-webkit-autofill:hover,
+.loginInput:-webkit-autofill:focus,
+.loginInput:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--white2) inset !important;
+    -webkit-text-fill-color: black !important;
+}
+
+.loginBtn {
+    margin-top: 10px;
+    width: 150px;
+    align-self: center;
+    color: black;
+}
+
+.loginInput, .loginBtn {
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: var(--orange1);
+    font-size: 15px;
+}
