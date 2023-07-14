@@ -1,22 +1,31 @@
 .loginFormContainer {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 300px;
     min-width: 200px;
-    margin-top: 300px;
+    margin-top: 200px;
+}
+
+.loginTitleContainer {
+    margin-bottom: 40px;
+    width: 199px;
+    height: 43px;
 }
 
 .loginTitle {
-    color: black;
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 10px;
+    color: var(--black);
+    font-size: 36px;
 }
 
 .loginInput {
     margin: 10px 0px;
-    color: black;
+    color: var(--grey1);
     background-color: var(--white2);
+    font-size: 16px;
+    width: 386px;
+    height: 49px;
+    text-indent: 10px;
 }
 
 .loginInput:-webkit-autofill,
@@ -28,16 +37,22 @@
 }
 
 .loginBtn {
-    margin-top: 10px;
-    width: 150px;
+    margin-top: 20px;
+    width: 193px;
     align-self: center;
-    color: black;
+    color: var(--black);
+    font-size: 24px;
+}
+
+.loginBtn:hover {
+    background-color: var(--orange1);
+    color: var(--white1);
 }
 
 .loginInput, .loginBtn {
     padding: 7px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid;
     border-color: var(--orange1);
-    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
