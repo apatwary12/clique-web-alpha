@@ -25,15 +25,15 @@ export default function LoginForm () {
     return(
         <form 
             action="submit" 
-            className= "flex flex-col items-center w-[300px] min-w-[200px] mt-[200px]"
+            className= "flex flex-col items-center w-80 mt-48"
         >
-            <div className="mb-[40px] w-[199px] h-[43px] text-black text-[36px]">
-                <span className={lato.className}>WELCOME!</span>
+            <div className="mb-10 w-52 h-[43px] text-black">
+                <h2 className={lato.className}>WELCOME!</h2>
             </div>
             <div>
                 <input 
                     className={classNames(
-                    "my-[10px] bg-[color:var(--white2)] text-[color:var(--grey1)] text-[16px] w-[386px] h-[49px] indent-2.5 p-[7px] rounded-[10px] border-[1px] border-[color:var(--orange1)]",
+                    "my-2.5 bg-white2 text-grey1 text-s w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange",
                     openSans.className)} 
                     type="email" 
                     placeholder="Email, Username, or Phone"
@@ -41,7 +41,7 @@ export default function LoginForm () {
                 required />
             <input 
                 className={classNames(
-                "my-[10px] bg-[color:var(--white2)] ext-[color:var(--grey1)] text-[16px] w-[386px] h-[49px] indent-2.5 p-[7px] rounded-[10px] border-[1px] border-[color:var(--orange1)]",
+                "my-2.5 bg-white2 text-grey1 text-s w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange",
                 openSans.className)} 
                 type="password"
                 placeholder="Password"
@@ -51,13 +51,13 @@ export default function LoginForm () {
             <div>
                 <button 
                     className={classNames(
-                        "p-[7px] rounded-[10px] border-[1px] border-[color:var(--orange1)] mt-[20px] w-[193px] text-[color:var(--black)] text-[24px] hover:bg-[color:var(--orange1)] hover:text-[color:var(--white1)]",
+                        "p-2 rounded-xl border-2 border-orange mt-5 w-48 text-black hover:bg-orange hover:text-white2",
                         openSansBold.className)}
                     // disabled={login}
                     type="submit"
                     // onClick={() => loginWithEmailAndPswd()}
                 >
-                    SIGN IN!
+                    <h3>SIGN IN!</h3>
                 </button>
             </div>
         </form>

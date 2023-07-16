@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function SSO () {
     return(
-        <div className="flex justify-around w-[200px] mt-[20px]">
+        <div className="flex justify-around w-52 mt-5">
             <FontAwesomeIcon 
-                className="w-[40px] h-[40px] mt-[20px] text-[color:var(--orange1)]"
+                className="w-10 h-10 mt-5 text-orange"
                 icon={faApple} 
             />
             <FontAwesomeIcon 
-                className="w-[40px] h-[40px] mt-[20px] text-[color:var(--orange1)]" 
+                className="w-10 h-10 mt-5 text-orange" 
                 icon={faFacebook} 
             />
             <FontAwesomeIcon 
-                className="w-[40px] h-[40px] mt-[20px] text-[color:var(--orange1)]"
+                className="w-10 h-10 mt-5 text-orange"
                 icon={faGoogle} 
             />
         </div>
