@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -22,6 +23,10 @@ module.exports = {
         'black': '#000000',
         'blue': '#0073ff'
       },
+      fontFamily: {
+        lato: ["var(--font-lato)"],
+        openSans: ["var(--font-openSans)"],
+      }
     },
   },
   plugins: [],
