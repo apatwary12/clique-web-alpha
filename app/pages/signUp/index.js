@@ -1,24 +1,24 @@
-import LoginForm from "@/app/components/loginForm/LoginForm";
+import SignUpForm from "@/app/components/signUpForm/SignUpForm";
 import SSO from "@/app/components/sso/SSO";
 import classNames from "classnames";
 import { Open_Sans } from "next/font/google";
-import Link from "next/link";
 
 const openSans = Open_Sans({
     subsets: ["latin"],
+    // weight: "300"
 })
 
-export default function Login() {
+export default function SignUp () {
     return (
         <div className="flex flex-col items-center">
-            <LoginForm />
+            <SignUpForm />
             <SSO />
             <p 
                 className={
                 classNames(
                 "text-grey mt-5 font-light", 
                 openSans.className)}
-            >Don't have an account yet? <span className="font-bold hover:underline hover:text-blue cursor-pointer">Sign up!</span>
+            >Already have an account? <span className="font-bold hover:underline hover:text-blue cursor-pointer">Sign in!</span>
             </p>
         </div>
     )
