@@ -27,26 +27,26 @@ export default function LoginForm () {
             action="submit" 
             className= "flex flex-col items-center w-80 mt-48"
         >
-            <div className="mb-10 w-52 h-[43px] text-black">
+            <div className="mb-10 w-52 text-black">
                 <h2 className={lato.className}>WELCOME!</h2>
             </div>
             <div>
                 <input 
                     className={classNames(
-                    "my-2.5 bg-white2 text-grey1 text-s w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange",
+                    "my-2.5 bg-white2 text-grey text-s w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange",
                     openSans.className)} 
                     type="email" 
                     placeholder="Email, Username, or Phone"
                     onChange={e => setEmail(e.target.value)}
                 required />
-            <input 
-                className={classNames(
-                "my-2.5 bg-white2 text-grey1 text-s w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange",
-                openSans.className)} 
-                type="password"
-                placeholder="Password"
-                onChange={e => setPassword(e.target.value)}
-            required />
+                <input 
+                    className={classNames(
+                    "my-2.5 bg-white2 text-grey text-s w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange",
+                    openSans.className)} 
+                    type="password"
+                    placeholder="Password"
+                    onChange={e => setPassword(e.target.value)}
+                required />
             </div>
             <div>
                 <button 
