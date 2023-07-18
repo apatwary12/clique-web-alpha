@@ -18,7 +18,7 @@ export default function Login() {
                 classNames(
                 "text-grey mt-5 font-light", 
                 openSans.className)}
-            >Don't have an account yet? <span className="font-bold hover:underline hover:text-blue cursor-pointer">Sign up!</span>
+            >{`Don't have an account yet?`} <span className="font-bold hover:underline hover:text-blue cursor-pointer">Sign up!</span>
             </p>
         </div>
     )
