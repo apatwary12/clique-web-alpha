@@ -37,6 +37,11 @@
     font-size: 20px;
     font-weight: 300px;
   }
+
+  p {
+    font-size: 15px;
+    font-weight: 200px;
+  }
 }
 
 body {
@@ -59,5 +64,5 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px var(--white2) inset !important;
-    -webkit-text-fill-color: black !important;
+    -webkit-text-fill-color: var(--grey1) !important;
 }
