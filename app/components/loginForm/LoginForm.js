@@ -29,12 +29,12 @@ export default function LoginForm () {
             </div>
             <div>
                 <button 
-                    className="p-2 rounded-xl border-2 px-10 border-orange mt-5 text-black hover:bg-orange hover:text-white2"
+                    className="p-2 rounded-xl border-2 px-10 border-orange mt-5 text-black hover:bg-orange hover:text-white2 font-openSans"
                     // disabled={login}
                     type="submit"
                     // onClick={() => loginWithEmailAndPswd()}
                 >
-                    <h4 className="font-openSans">SIGN IN!</h4>
+                    SIGN IN!
                 </button>
             </div>
         </form>
