@@ -31,12 +31,12 @@ export default function SignUpForm () {
                 required />
             <div>
                 <button 
-                    className="p-2 rounded-xl border-2 px-10 border-orange mt-5 text-black hover:bg-orange hover:text-white2"
+                    className="p-2 rounded-xl border-2 px-10 border-orange mt-5 text-black hover:bg-orange hover:text-white2 font-openSans"
                     // disabled={login}
                     type="submit"
                     // onClick={() => loginWithEmailAndPswd()}
                 >
-                    <h4 className="font-openSans">SIGN UP!</h4>
+                SIGN UP!
                 </button>
             </div>
         </form>
