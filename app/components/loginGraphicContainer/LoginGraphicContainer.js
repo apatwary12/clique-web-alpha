@@ -6,7 +6,7 @@ export default function LoginGraphicContainer () {
     return (
         <div className="bg-pink h-screen">
             <div className="absolute right-[306px] bottom-0">
-                <Image src={Arrows} width={750} />
+                {/* <Image src={Arrows} width={750} /> */}
             </div>
             <LoginGraphic />
         </div>
