@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Clique from "@/public/images/Clique.png"
+import Clique from "@/public/images/CliqueLogo_KO-01.png";
+import CliqueShadow from "@/public/images/CliqueLogo-01.svg"
 import Ellipse436 from "@/public/images/Ellipse-436.png";
 import Ellipse437 from "@/public/images/Ellipse-437.png";
 import Ellipse438 from "@/public/images/Ellipse-438.png";
@@ -11,7 +12,12 @@ export default function LoginGraphic () {
                 <Image src={Ellipse438} width={200}/>
             </div>
             <div className="z-20 justify-self-center mt-80 shrink">
-                <Image src={Clique} width={400}/>
+                <div className="absolute z-10">
+                    <Image src={Clique} width={400}/>
+                </div>
+                <div className="relative top-3 opacity-40">
+                    <Image src={CliqueShadow} width={400}/>
+                </div>
             </div>
             <div className="absolute right-0 bottom-36 z-10">
                 <Image src={Ellipse437} width={250}/>
