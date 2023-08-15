@@ -26,6 +26,13 @@ module.exports = {
       fontFamily: {
         lato: ["var(--font-lato)"],
         openSans: ["var(--font-openSans)"],
+        quasimoda: ["quasimoda"],
+        madeMellowBlack: ["madeMellowBlack"],
+        madeMellowBold: ["madeMellowBold"],
+        madeMellowLight: ["madeMellowLight"],
+        madeMellowMedium: ["madeMellowMedium"],
+        madeMellowRegular: ["madeMellowRegular"],
+        madeMellowSemiBold: ["madeMellowSemiBold"]
       }
     },
   },

@@ -44,6 +44,41 @@
   }
 }
 
+@font-face {
+  font-family: 'quasimoda';
+  src: url('../public/assets/quasimoda-light/quasimoda-light.otf');
+}
+
+@font-face {
+  font-family: 'madeMellowBlack';
+  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-Black.otf');
+}
+
+@font-face {
+  font-family: 'madeMellowBold';
+  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-Bold.otf');
+}
+
+@font-face {
+  font-family: 'madeMellowLight';
+  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-Light.otf');
+}
+
+@font-face {
+  font-family: 'madeMellowMedium';
+  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-Medium.otf');
+}
+
+@font-face {
+  font-family: 'madeMellowRegular';
+  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-Regular.otf');
+}
+
+@font-face {
+  font-family: 'madeMellowSemiBold';
+  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-SemiBold.otf');
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
