@@ -7,7 +7,7 @@ import EllipseWhite from "@/public/images/Ellipse-White.png";
 
 export default function LoginGraphic () {
     return(
-        <div className="flex h-full w-full">
+        <div className="relative flex h-full w-full">
             <div className="relative left-10 top-5">
                 <Image src={EllipseWhite} width={250}/>
             </div>
