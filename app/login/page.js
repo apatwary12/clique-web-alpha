@@ -1,5 +1,6 @@
 import LoginContainer from "@/app/components/loginContainer/LoginContainer";
-import LoginGraphicContainer from "./components/loginGraphicContainer/LoginGraphicContainer";
+import SignupContainer from "@/app/components/signupContainer/SignupContainer";
+import LoginGraphicContainer from "@/app/components/loginGraphicContainer/LoginGraphicContainer";
 
 export default function Home() {
   return (
