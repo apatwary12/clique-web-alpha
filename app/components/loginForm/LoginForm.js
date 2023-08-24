@@ -13,15 +13,15 @@ export default function LoginForm () {
             <div className="mb-10 w-52 text-black">
                 <h2 className="font-lato">WELCOME!</h2>
             </div>
-            <div>
+            <div className="flex flex-col">
                 <input 
-                    className="my-2.5 bg-white2 text-black placeholder-gray-600 text-s w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange font-openSans font-light"
+                    className="my-2.5 bg-white2 text-black placeholder-gray-600 text-s w-56 sm:w-60 md:w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange font-openSans font-light"
                     type="email" 
                     placeholder="Email, Username, or Phone"
                     onChange={e => setEmail(e.target.value)}
                 required />
                 <input 
-                    className="my-2.5 bg-white2 text-black placeholder-gray-600 text-s w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange font-openSans font-light"
+                    className="my-2.5 bg-white2 text-black placeholder-gray-600 text-s w-56 sm:w-80 md:w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange font-openSans font-light"
                     type="password"
                     placeholder="Password"
                     onChange={e => setPassword(e.target.value)}
