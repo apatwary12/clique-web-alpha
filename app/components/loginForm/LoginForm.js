@@ -8,20 +8,20 @@ export default function LoginForm () {
     return(
         <form 
             action="submit" 
-            className= "flex flex-col items-center w-80 mt-48"
+            className= "flex flex-col items-center w-80 lg:mt-48"
         >
-            <div className="mb-10 w-52 text-black">
+            <div className="lg:mb-10 w-52 text-black">
                 <h2 className="font-lato">WELCOME!</h2>
             </div>
-            <div>
+            <div className="flex flex-col">
                 <input 
-                    className="my-2.5 bg-white2 text-black placeholder-gray-600 text-s w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange font-openSans font-light"
+                    className="my-2.5 bg-white2 text-black placeholder-gray-600 text-s w-64 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange font-openSans font-light md:w-96"
                     type="email" 
                     placeholder="Email, Username, or Phone"
                     onChange={e => setEmail(e.target.value)}
                 required />
                 <input 
-                    className="my-2.5 bg-white2 text-black placeholder-gray-600 text-s w-96 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange font-openSans font-light"
+                    className="my-2.5 bg-white2 text-black placeholder-gray-600 text-s w-64 h-12 indent-2.5 p-2 rounded-xl border-2 border-orange font-openSans font-light md:w-96"
                     type="password"
                     placeholder="Password"
                     onChange={e => setPassword(e.target.value)}
