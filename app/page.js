@@ -3,11 +3,11 @@ import LoginGraphicContainer from "./components/loginGraphicContainer/LoginGraph
 
 export default function Home() {
   return (
-    <main className="flex">
-      <div className="w-6/12">
+    <main className="lg:flex">
+      <div className="lg:w-6/12">
         <LoginContainer />
       </div>
-      <div className="w-6/12">
+      <div className="lg:w-6/12">
         <LoginGraphicContainer />
       </div>
     </main>
