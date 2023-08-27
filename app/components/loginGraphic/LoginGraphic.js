@@ -8,22 +8,22 @@ import EllipseWhite from "@/public/images/Ellipse-White.png";
 export default function LoginGraphic () {
     return(
         <div className="relative flex h-full w-full">
-            <div className="relative left-10 top-5">
-                <Image src={EllipseWhite} width={250}/>
+            <div className="lg:absolute lg:left-10 lg:top-5">
+                <Image src={EllipseWhite} width={250} alt="White Ellipse" />
             </div>
-            <div className="z-20 justify-self-center mt-80 shrink">
-                <div className="absolute z-10">
-                    <Image src={Clique} width={400}/>
+            <div className="lg:z-20 lg:flex lg:justify-center lg:items-center lg:shrink lg:w-full lg:h-full">
+                <div className="lg:absolute lg:z-20">
+                    <Image src={Clique} width={400} alt="Clique Logo" />
                 </div>
-                <div className="relative top-3 opacity-40">
-                    <Image src={CliqueShadow} width={400}/>
+                <div className="lg:relative lg:top-3 lg:opacity-40">
+                    <Image src={CliqueShadow} width={400} alt="Clique Logo Shadow" />
                 </div>
             </div>
-            <div className="absolute w-88 h-88 right-0 bottom-72 z-10 overflow-hidden">
-                <Image src={EllipseOrange} width={300}/>
+            <div className="lg:absolute lg:w-88 lg:h-88 lg:right-0 lg:bottom-72 lg:z-10">
+                <Image src={EllipseOrange} width={300} alt="Orange Ellipse" />
             </div>
-            <div className="absolute bottom-0 right-0">
-                <Image src={EllipseYellow} width={400}/>
+            <div className="lg:absolute lg:bottom-0 lg:right-0">
+                <Image src={EllipseYellow} width={400} alt="Yellow Ellipse" />
             </div>
         </div>
     )
