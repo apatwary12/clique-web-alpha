@@ -4,10 +4,7 @@ import LoginGraphic from "../loginGraphic/LoginGraphic";
 
 export default function LoginGraphicContainer () {
     return (
-        <div className="bg-pink h-screen">
-            <div className="absolute right-[306px] bottom-0">
-                {/* <Image src={Arrows} width={750} /> */}
-            </div>
+        <div className="bg-pink h-screen hidden lg:block">
             <LoginGraphic />
         </div>
     )
