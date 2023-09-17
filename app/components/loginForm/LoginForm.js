@@ -1,9 +1,44 @@
 "use client"
-import { useState } from "react";
+import { initFirebase } from "@/firebase/firebaseConfig";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 
 export default function LoginForm () {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    initFirebase();
+
+    const [login, setLogin] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+    const router = useRouter();
+    const auth = getAuth();
+
+    const loginWithEmailAndPassword = () => {
+        // useEffect(() => {
+            if(error !== '') setError('');
+        // }, [error])
+
+        // useEffect(()=> {
+            setLogin(true);
+        // }, [])
+
+        signInWithEmailAndPassword(auth, email, password)
+        .then(result => {
+            console.log("LOGIN RESULT: ", result);
+            router.push("/dashboard")
+        
+        })
+        .catch(error => {
+            // useEffect(() => {
+                console.log("ERROR: ", error);
+
+                setLogin(false);
+
+                setError("Unable to signin to Clique account. Please try again later.")
+            // }, [])
+        })
+    }
 
     return(
         <form 
@@ -30,9 +65,9 @@ export default function LoginForm () {
             <div>
                 <button 
                     className="p-2 rounded-xl border-2 px-10 border-orange mt-5 text-black hover:bg-orange hover:text-white2 font-openSans"
-                    // disabled={login}
+                    disabled={login}
                     type="submit"
-                    // onClick={() => loginWithEmailAndPswd()}
+                    onClick={() => loginWithEmailAndPassword()}
                 >
                     SIGN IN!
                 </button>
