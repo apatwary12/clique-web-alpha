@@ -1,9 +1,11 @@
 "use client"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function SignUpForm () {
+    const auth = getAuth();
+    const router = useRouter();
     const [signup, setSignup] = useState(false);
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -12,11 +14,8 @@ export default function SignUpForm () {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
 
-    const router = useRouter();
-    const auth = getAuth();
-
-    console.log("PASSWORD: ", password);
-    console.log("CONFIRM PASSWORD: ", confirmPassword);
+    // console.log("PASSWORD: ", password);
+    // console.log("CONFIRM PASSWORD: ", confirmPassword);
 
     const signupWithEmailAndPassword = () => {
         if(password !== confirmPassword) setError('Please make sure your passwords match');
@@ -27,11 +26,11 @@ export default function SignUpForm () {
 
         createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
-            console.log("CREATE RESULT: ", result);
-            router.push('/dashboard')
+            console.log("RESULT: ", result)
+            router.push('/dashboard');
         })
-        .catch(error => {
-            console.log(error);
+        .catch((error) => {
+            console.log("SIGNUP ERROR ", error);
 
             if(error.code.includes('auth/weak-password')) {
                 setError('Please enter a stronger password.')
@@ -91,6 +90,7 @@ export default function SignUpForm () {
                 SIGN UP!
                 </button>
             </div>
+            <div className="text-red-500">{error}</div>
         </form>
     )
 }
