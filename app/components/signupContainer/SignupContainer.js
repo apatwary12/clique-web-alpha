@@ -1,8 +1,9 @@
+"use client"
 import SignUpForm from "@/app/components/signUpForm/SignUpForm";
 import SSO from "@/app/components/sso/SSO";
 import Link from "next/link";
 
-export default function SignUp () {
+export default function SignUpContainer () {
     return (
         <div className="flex flex-col items-center h-screen">
             <SignUpForm />
