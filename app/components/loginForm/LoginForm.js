@@ -2,26 +2,19 @@
 import { initFirebase } from "@/firebase/firebaseConfig";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export default function LoginForm () {
     initFirebase();
-
+    const auth = getAuth();
+    const router = useRouter();
     const [login, setLogin] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const router = useRouter();
-    const auth = getAuth();
 
     const loginWithEmailAndPassword = () => {
-        // useEffect(() => {
-            if(error !== '') setError('');
-        // }, [error])
-
-        // useEffect(()=> {
-            setLogin(true);
-        // }, [])
+        setLogin(true);
 
         signInWithEmailAndPassword(auth, email, password)
         .then(result => {
@@ -30,13 +23,21 @@ export default function LoginForm () {
         
         })
         .catch(error => {
-            // useEffect(() => {
-                console.log("ERROR: ", error);
+            console.log("LOGIN ERROR: ", error);
 
-                setLogin(false);
+            if(error.code.includes("auth/invalid-login-credentials")) {
+                setError("Username and password do not match");
+            }
 
-                setError("Unable to signin to Clique account. Please try again later.")
-            // }, [])
+            if(error.code.includes("auth/invalid-email")) {
+                setError("Email has not been created with an account");
+            }
+
+            if(error.code.includes("auth/wrong-password")) {
+                setError("Password is not correct");
+            }
+
+            setLogin(false);
         })
     }
 
@@ -72,6 +73,7 @@ export default function LoginForm () {
                     SIGN IN!
                 </button>
             </div>
+            <div className="text-red-500">{error}</div>
         </form>
     )
 }
