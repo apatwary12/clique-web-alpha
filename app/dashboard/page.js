@@ -12,6 +12,7 @@ export default function Dashboard() {
     const router = useRouter();
     const[user, loading] = useAuthState(auth);
     const[signedIn, setSignedIn] = useState(true);
+    const[error, setError] = useState("");
 
     useEffect(() => {
         // Handle user and loading page
@@ -35,6 +36,7 @@ export default function Dashboard() {
         })
         .catch((error) => {
             console.log("SIGNOUT ERROR: ", error)
+            setError("An error has occured. Please try again.")
         })
     }
 
@@ -50,6 +52,7 @@ export default function Dashboard() {
             >
                 Sign out
             </button>
+            <div className="text-red-500">{error}</div>
         </div>
     )
 }
