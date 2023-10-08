@@ -19,7 +19,7 @@ export default function LoginForm () {
         signInWithEmailAndPassword(auth, email, password)
         .then(result => {
             console.log("LOGIN RESULT: ", result);
-            router.push("/dashboard")
+            router.push("/dashboard");
         
         })
         .catch(error => {
