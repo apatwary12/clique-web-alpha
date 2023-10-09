@@ -6,7 +6,7 @@ export default function Home() {
   initFirebase();
   
   return (
-    <main className="flex">
+    <main className="flex ">
       <div className="w-6/12">
         <LoginContainer />
       </div>
