@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -12,6 +13,27 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'orange': '#ff9a64',
+        'pink': '#ffd2cc',
+        'white1': '#fffff',
+        'white2': '#f5f5f5',
+        'white3': '#d9d9d9',
+        'grey': '#878787',
+        'black': '#000000',
+        'blue': '#0073ff'
+      },
+      fontFamily: {
+        lato: ["var(--font-lato)"],
+        openSans: ["var(--font-openSans)"],
+        quasimoda: ["quasimoda"],
+        madeMellowBlack: ["madeMellowBlack"],
+        madeMellowBold: ["madeMellowBold"],
+        madeMellowLight: ["madeMellowLight"],
+        madeMellowMedium: ["madeMellowMedium"],
+        madeMellowRegular: ["madeMellowRegular"],
+        madeMellowSemiBold: ["madeMellowSemiBold"]
+      }
     },
   },
   plugins: [],
