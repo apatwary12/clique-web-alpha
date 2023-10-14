@@ -3,13 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --orange1: #ff9a64;
-  --pink1: rgb(255, 210, 204);
-  --white1: #ffffff;
-  --white2: #f5f5f5;
-  --white3: #d9d9d9;
-  --grey1: #878787;
-  --black: #000000;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,65 +16,6 @@
   }
 }
 
-@layer base {
-  h1 {
-    font-size: 50px;
-    font-weight: 500px;
-  }
-  h2 {
-    font-size: 40px;
-    font-weight: 400px;
-  }
-  h3 {
-    font-size: 30px;
-    font-weight: 400px;
-  }
-  h4 {
-    font-size: 20px;
-    font-weight: 300px;
-  }
-
-  p {
-    font-size: 15px;
-    font-weight: 200px;
-  }
-}
-
-@font-face {
-  font-family: 'quasimoda';
-  src: url('../public/assets/quasimoda-light/quasimoda-light.otf');
-}
-
-@font-face {
-  font-family: 'madeMellowBlack';
-  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-Black.otf');
-}
-
-@font-face {
-  font-family: 'madeMellowBold';
-  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-Bold.otf');
-}
-
-@font-face {
-  font-family: 'madeMellowLight';
-  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-Light.otf');
-}
-
-@font-face {
-  font-family: 'madeMellowMedium';
-  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-Medium.otf');
-}
-
-@font-face {
-  font-family: 'madeMellowRegular';
-  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-Regular.otf');
-}
-
-@font-face {
-  font-family: 'madeMellowSemiBold';
-  src: url('../public/assets/made-mellow/MADEMellowPERSONALUSE-SemiBold.otf');
-}
-
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -87,17 +24,4 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
-
-main {
-  background-color: var(--white2);
-  height: 100%;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px var(--white2) inset !important;
-    -webkit-text-fill-color: var(--grey1) !important;
 }
