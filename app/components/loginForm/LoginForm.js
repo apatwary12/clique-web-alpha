@@ -1,9 +1,45 @@
 "use client"
-import { useState } from "react";
+import { initFirebase } from "@/firebase/firebaseConfig";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 
 export default function LoginForm () {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    initFirebase();
+    const auth = getAuth();
+    const router = useRouter();
+    const [login, setLogin] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+
+    const loginWithEmailAndPassword = () => {
+        setLogin(true);
+
+        signInWithEmailAndPassword(auth, email, password)
+        .then(result => {
+            console.log("LOGIN RESULT: ", result);
+            router.push("/dashboard");
+        
+        })
+        .catch(error => {
+            console.log("LOGIN ERROR: ", error);
+
+            if(error.code.includes("auth/invalid-login-credentials")) {
+                setError("Username and password do not match");
+            }
+
+            if(error.code.includes("auth/invalid-email")) {
+                setError("Email has not been created with an account");
+            }
+
+            if(error.code.includes("auth/wrong-password")) {
+                setError("Password is not correct");
+            }
+
+            setLogin(false);
+        })
+    }
 
     return(
         <form 
@@ -30,13 +66,14 @@ export default function LoginForm () {
             <div>
                 <button 
                     className="p-2 rounded-xl border-2 px-10 border-orange mt-5 text-black hover:bg-orange hover:text-white2 font-openSans"
-                    // disabled={login}
+                    disabled={login}
                     type="submit"
-                    // onClick={() => loginWithEmailAndPswd()}
+                    onClick={() => loginWithEmailAndPassword()}
                 >
                     SIGN IN!
                 </button>
             </div>
+            <div className="text-red-500">{error}</div>
         </form>
     )
 }
