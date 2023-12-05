@@ -6,23 +6,27 @@ import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Dashboard() {
-    initFirebase();
+	initFirebase();
 
-    const auth = getAuth();
-    const router = useRouter();
-    const[user, loading] = useAuthState(auth);
+	const auth = getAuth();
+	const router = useRouter();
+	const [user, loading] = useAuthState(auth);
     const[signedIn, setSignedIn] = useState(true);
     const[error, setError] = useState("");
 
     useEffect(() => {
         // Handle user and loading page
         const handleUser = () => {
-          if(loading) {
-            return (<div>Loading...</div>);
-          }
-          if(!user) {
-            router.push('/login');
-          }
+			const emailVerified = user?.emailVerified ?? false;
+			if(loading) {
+				return (<div>Loading...</div>);
+			}
+			if(!user) {
+				router.push('/login');
+			}
+			if(!emailVerified) {
+				router.push("/verify");
+			}
         }
     
         handleUser();
