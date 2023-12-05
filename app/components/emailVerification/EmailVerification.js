@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function EmailVerification () {
     const auth = getAuth(app);
     const router = useRouter();
-    const [signup, setSignup] = useState(false);
+    const [signin, setSignin] = useState(false);
     const [error, setError] = useState('');
 
     const handleResend = () => {
@@ -20,7 +20,7 @@ export default function EmailVerification () {
         .catch(error => {
             console.log("Email verification error: ", error);
             setError('Unable to send email verification. Please try again later.');
-            setSignup(false);
+            setSignin(false);
         });
     }
 
@@ -37,12 +37,14 @@ export default function EmailVerification () {
             <div className="flex flex-col items-center">
                 <p className="font-lato font-light mb-5">Didn't receive a link? Click the button below to resend a link.</p>
                 <button 
+                    disabled={signin}
                     className="p-2 rounded-xl border-2 px-10 border-orange mt-5 text-black hover:bg-orange hover:text-white2 font-openSans"
                     onClick={handleResend}
                 >
                     RESEND LINK
                 </button>
             </div>
+            <div className="text-red-500">{error}</div>
         </div>
     )
 }
