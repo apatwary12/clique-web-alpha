@@ -1,7 +1,7 @@
 "use client"
 
 import { app } from "@/firebase/firebaseConfig";
-import { getAuth, sendEmailVerification } from "@firebase/auth";
+import { applyActionCode, getAuth, sendEmailVerification } from "@firebase/auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -11,7 +11,7 @@ export default function EmailVerification () {
     const [signin, setSignin] = useState(false);
     const [error, setError] = useState('');
 
-    const handleResend = () => {
+    const handleResend = (auth, actionCode, continueUrl, lang) => {
         sendEmailVerification(auth.currentUser)
         .then(() => {
             console.log("Email verification sent");

@@ -2,6 +2,7 @@ import LoginContainer from "@/app/components/loginContainer/LoginContainer";
 import SignupContainer from "@/app/components/signupContainer/SignupContainer";
 import LoginGraphicContainer from "@/app/components/loginGraphicContainer/LoginGraphicContainer";
 import { initFirebase } from "@/firebase/firebaseConfig";
+import { getAuth } from "@firebase/auth";
 
 export default function Home() {
   initFirebase();
