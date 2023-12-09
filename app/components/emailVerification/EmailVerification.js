@@ -15,7 +15,6 @@ export default function EmailVerification () {
         sendEmailVerification(auth.currentUser)
         .then(() => {
             console.log("Email verification sent");
-            router.push('/dashboard');
         })
         .catch(error => {
             console.log("Email verification error: ", error);
