@@ -38,7 +38,7 @@ export default function EmailVerification () {
                 <button 
                     disabled={signin}
                     className="p-2 rounded-xl border-2 px-10 border-orange mt-5 text-black hover:bg-orange hover:text-white2 font-openSans"
-                    onClick={handleResend}
+                    onClick={() => handleResend(auth)}
                 >
                     RESEND LINK
                 </button>
