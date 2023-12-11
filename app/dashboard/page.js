@@ -18,18 +18,14 @@ export default function Dashboard() {
         // Handle user and loading page
         const handleUser = () => {
 			const emailVerified = user?.emailVerified ?? false;
-            // console.log("EMAIL VER? ", emailVerified);
-            // console.log("USER: ", user)
-            // console.log(!user || !emailVerified)
 			if(loading) {
 				return (<div>Loading...</div>);
 			}
-			if(!user) {
-                // console.log("USER: ", user)
-				router.push('/login');
-			}
-			if(!emailVerified) {
+            if(!emailVerified) {
 				router.push("/verify");
+			}
+			if(!user) {
+				router.push('/login');
 			}
         }
     

@@ -27,10 +27,15 @@ export default function SignUpForm() {
 		createUserWithEmailAndPassword(auth, email, password)
 			.then(result => {
 				console.log("RESULT: ", result);
+				if(!result.user.emailVerified) {
+					router.push("/verify")
+				} else {
+					router.push("/dashboard");
+				}
 				// Send email verification
 				sendEmailVerification(auth.currentUser)
 					.then(() => {
-						console.log("Email verification sent");
+						console.log("SIGN UP RESULT: ", result);
 						router.push('/dashboard');
 					})
 					.catch(error => {
