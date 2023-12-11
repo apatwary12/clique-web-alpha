@@ -17,7 +17,7 @@ export default function VerifyEmail() {
         if(user?.emailVerified) {
           router.push("/dashboard");
         } else {
-          router.push(`/verify?email=${user?.email}`)
+          router.push(`/verify?email=${user?.email}`);
         }
       })
     }
