@@ -19,7 +19,12 @@ export default function LoginForm () {
         signInWithEmailAndPassword(auth, email, password)
         .then(result => {
             console.log("LOGIN RESULT: ", result);
-            router.push("/dashboard");
+
+            if(!result.user.emailVerified) {
+                router.push("/verify")
+            } else {
+                router.push("/dashboard");
+            }
         
         })
         .catch(error => {
