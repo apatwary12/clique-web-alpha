@@ -34,7 +34,7 @@ export default function EmailVerification () {
                 </p>
             </div>
             <div className="flex flex-col items-center">
-                <p className="font-lato font-light mb-5">Didn't receive a link? Click the button below to resend a link.</p>
+                <p className="font-lato font-light mb-5">Did not receive a link? Click the button below to resend a link.</p>
                 <button 
                     disabled={signin}
                     className="p-2 rounded-xl border-2 px-10 border-orange mt-5 text-black hover:bg-orange hover:text-white2 font-openSans"

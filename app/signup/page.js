@@ -27,7 +27,7 @@ export default function SignUp() {
     }
 
     handleSignUp();
-  }, [])
+  })
 
   return (
     <main className="flex">
