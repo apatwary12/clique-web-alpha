@@ -1,6 +1,11 @@
 "use client"
 import { initFirebase } from "@/firebase/firebaseConfig";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  OAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import SSO from "../sso/SSO";
