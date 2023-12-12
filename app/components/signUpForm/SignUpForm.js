@@ -62,10 +62,21 @@ export default function SignUpForm() {
   };
 
   const signUpWithApple = async () => {
-    const provider = new app.auth.OAuthProvider("apple.com");
-    const result = await auth.signInWithPopup(provider);
+    try {
+      const appleProvider = new OAuthProvider("apple.com");
+      appleProvider.addScope("email");
 
-    console.log(result.user); // logged-in Apple user
+      await signInWithPopup(auth, appleProvider);
+
+      const user = auth.currentUser;
+      console.log("User signed in with Apple:", user);
+      router.push("/dashboard");
+    } catch (error) {
+      console.error("Error signing in with Apple:", error);
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+	  console.log(errorCode, errorMessage);
+    }
   };
 
   return (
