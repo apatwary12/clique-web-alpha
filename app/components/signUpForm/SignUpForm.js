@@ -62,24 +62,10 @@ export default function SignUpForm() {
   };
 
   const signUpWithApple = async () => {
-    try {
-      const appleProvider = new OAuthProvider("apple.com");
-      appleProvider.addScope("email");
-      appleProvider.setCustomParameters({
-        redirect_uri: "https://clique-7547f.firebaseapp.com/__/auth/handler",
-      });
+    const provider = new app.auth.OAuthProvider("apple.com");
+    const result = await auth.signInWithPopup(provider);
 
-      await signInWithPopup(auth, appleProvider);
-
-      const user = auth.currentUser;
-      console.log("User signed in with Apple:", user);
-      router.push("/dashboard");
-    } catch (error) {
-      console.error("Error signing in with Apple:", error);
-	  var errorCode = error.code;
-	  var errorMessage = error.message;
-	  console.log(errorCode, errorMessage);
-    }
+    console.log(result.user); // logged-in Apple user
   };
 
   return (
