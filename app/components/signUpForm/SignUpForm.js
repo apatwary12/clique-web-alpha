@@ -19,6 +19,7 @@ import {
   faGoogle,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SSO from "../sso/SSO";
 
 export default function SignUpForm() {
   const router = useRouter();
@@ -133,22 +134,7 @@ export default function SignUpForm() {
         </div>
         <div className="text-red-500">{error}</div>
       </form>
-      <div className="flex justify-around w-52 mt-5">
-        <button
-          className="w-10 h-10 mt-5 text-orange"
-          onClick={() => signUpWithApple()}
-        >
-          <FontAwesomeIcon className="w-10 h-10" icon={faApple} />
-        </button>
-        <FontAwesomeIcon
-          className="w-10 h-10 mt-5 text-orange"
-          icon={faFacebook}
-        />
-        <FontAwesomeIcon
-          className="w-10 h-10 mt-5 text-orange"
-          icon={faGoogle}
-        />
-      </div>
+      <SSO appleFunction = {signUpWithApple} />
     </>
   );
 }
