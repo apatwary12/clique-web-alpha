@@ -1,16 +1,16 @@
-[CLI-68](https://linear.app/clique-friends-app/issue/CLI-68/apple-sso-authentication)
+[CLI-XX](https://linear.app/clique-friends-app/issue/CLI-xx/feature-name)
 
 ## Summary
-Added Apple SSO to Signin
+Summarize what you've done
 
 ## Developer Notes
-Apple is highly strict on not allowing local domains for callback urls so this can only be tested via live. 
+Give warnings to other developers about this PR.
 
 ## Future
-n/a 
+future tickets that need to be created or actions that needs to be done after merging.
 
 ## PR Checklist
-n/a
+Add your own custom checklist if this PR is hanging to keep track of requested changes
 
 - [ ] Correct merge branch
 - [ ] Code approved
