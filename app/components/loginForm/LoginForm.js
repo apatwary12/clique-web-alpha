@@ -63,6 +63,23 @@ export default function LoginForm () {
 			console.log(errorCode, errorMessage);
 		}
 	};
+	const signInWithFacebook = async () => {
+		try {
+			const appleProvider = new OAuthProvider("facebook.com");
+			appleProvider.addScope("email");
+
+			await signInWithPopup(auth, appleProvider);
+
+			const user = auth.currentUser;
+			console.log("User signed in with Facebook:", user);
+			router.push("/dashboard");
+		} catch (error) {
+			console.error("Error signing in with Facebook:", error);
+			var errorCode = error.code;
+			var errorMessage = error.message;
+			console.log(errorCode, errorMessage);
+		}
+	};
 
     return (
       <>
@@ -101,7 +118,10 @@ export default function LoginForm () {
           </div>
           <div className="text-red-500">{error}</div>
         </form>
-        <SSO appleFunction={signInWithApple} />
+        <SSO
+          appleFunction={signInWithApple}
+          facebookFunction={signInWithFacebook}
+        />
       </>
     );
 }

@@ -1,7 +1,7 @@
 import { faApple, faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function SSO({ appleFunction }) {
+export default function SSO({ appleFunction, facebookFunction }) {
   return (
     <div className="flex justify-around w-full max-w-[250px] mx-auto mt-5 mb-5 order-1 lg:order-2">
       <button
@@ -15,7 +15,7 @@ export default function SSO({ appleFunction }) {
       </button>
       <button
         className="w-10 h-10 mt-5 text-orange"
-        onClick={() => console.log("Facebook")}
+        onClick={() => facebookFunction()}
       >
         <FontAwesomeIcon
           className="w-10 h-10 mt-5 text-orange"
