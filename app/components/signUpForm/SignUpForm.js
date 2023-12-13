@@ -31,8 +31,6 @@ export default function SignUpForm() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  // console.log("PASSWORD: ", password);
-  // console.log("CONFIRM PASSWORD: ", confirmPassword);
 
   const signupWithEmailAndPassword = () => {
     if (password !== confirmPassword)
@@ -79,6 +77,24 @@ export default function SignUpForm() {
 	  console.log(errorCode, errorMessage);
     }
   };
+
+const signUpWithFacebook = async () => {
+	try {
+		const facebookProvider = new OAuthProvider("facebook.com");
+		facebookProvider.addScope("email");
+
+		await signInWithPopup(auth, facebookProvider);
+
+		const user = auth.currentUser;
+		console.log("User signed in with Facebook:", user);
+		router.push("/dashboard");
+	} catch (error) {
+		console.error("Error signing in with Facebook:", error);
+		var errorCode = error.code;
+		var errorMessage = error.message;
+		console.log(errorCode, errorMessage);
+	}
+};
 
   return (
     <>
@@ -134,7 +150,10 @@ export default function SignUpForm() {
         </div>
         <div className="text-red-500">{error}</div>
       </form>
-      <SSO appleFunction = {signUpWithApple} />
+      <SSO
+        appleFunction={signUpWithApple}
+        facebookFunction={signUpWithFacebook}
+      />
     </>
   );
 }
