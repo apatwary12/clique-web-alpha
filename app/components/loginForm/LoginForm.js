@@ -5,10 +5,14 @@ import {
   signInWithEmailAndPassword,
   OAuthProvider,
   signInWithPopup,
-} from "firebase/auth";
+  GoogleAuthProvider,
+} from "firebase/auth"; // Import necessary Firebase auth functions
 import { useRouter } from "next/navigation";
+import firebase from "firebase/app"; // Import Firebase app module
+import "firebase/auth"; // Import Firebase authentication module
 import React, { useState } from "react";
 import SSO from "../sso/SSO";
+
 
 export default function LoginForm () {
     initFirebase();
@@ -63,7 +67,22 @@ export default function LoginForm () {
 			console.log(errorCode, errorMessage);
 		}
 	};
+	const signInWithGoogle = async () => {
+		try {
+			const googleProvider = new GoogleAuthProvider();
+			await signInWithPopup(auth, googleProvider);
 
+			const user = auth.currentUser;
+			console.log("User signed in with Google:", user);
+			router.push("/dashboard");
+		} catch (error) {
+			console.error("Error signing in with Google:", error);
+			var errorCode = error.code;
+			var errorMessage = error.message;
+			console.log(errorCode, errorMessage);
+		}
+	};
+  
     return (
       <>
         <form
@@ -101,7 +120,7 @@ export default function LoginForm () {
           </div>
           <div className="text-red-500">{error}</div>
         </form>
-        <SSO appleFunction={signInWithApple} />
+        <SSO appleFunction={signInWithApple} googleFunction={signInWithGoogle} />
       </>
     );
 }
