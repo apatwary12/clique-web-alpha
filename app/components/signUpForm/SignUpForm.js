@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithPopup,
   OAuthProvider,
+  GoogleAuthProvider
 } from "firebase/auth";
 
 const app = initFirebase();
@@ -80,6 +81,23 @@ export default function SignUpForm() {
     }
   };
 
+  const signUpWithGoogle = async () => {
+    try {
+      const googleProvider = new GoogleAuthProvider();
+
+      await signInWithPopup(auth, googleProvider);
+
+      const user = auth.currentUser;
+      console.log("User signed in with Google:", user);
+      router.push("/dashboard");
+    } catch (error) {
+      console.error("Error signing in with Google:", error);
+	  var errorCode = error.code;
+	  var errorMessage = error.message;
+	  console.log(errorCode, errorMessage);
+    }
+  };
+
   return (
     <>
       <form id="signup" className="flex flex-col items-center mt-32">
@@ -134,7 +152,7 @@ export default function SignUpForm() {
         </div>
         <div className="text-red-500">{error}</div>
       </form>
-      <SSO appleFunction = {signUpWithApple} />
+      <SSO appleFunction = {signUpWithApple} googleFunction = {signUpWithGoogle} />
     </>
   );
 }
